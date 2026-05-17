@@ -37,16 +37,16 @@ a{
     content: "";
     position: absolute;
     inset: 0;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(81, 116, 132, 0.49) 3%,
-        rgba(81, 116, 138, 0.49) 6%,
-        rgba(0,0,0,0.0) 30%
-    );
+background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.75) 2%,
+    rgba(255, 255, 255, 0.262) 8%,
+    rgba(255,255,255,0) 25%
+);
+    
     
 
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
 
 }
@@ -59,7 +59,7 @@ a{
 }
 .slider .list .item .content{
     position: absolute;
-    top: 20%;
+    top: 5%;
     width: 1140px;
     max-width: 80%;
     left: 50%;
@@ -84,6 +84,7 @@ a{
     font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
+    
 }
 .slider .list .item .type{
     color: #01b6fdcb
@@ -359,4 +360,125 @@ a{
     .slider .list .item .content .title{
         font-size: 50px;
     }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+    .slider{
+        height: 95vh;
+        overflow: hidden;
+    }
+
+    .slider .list .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slider .list .item .content{
+        top: 12%;
+        left: 5%;
+
+        width: 90%;
+
+        padding-right: 0;
+
+        transform: none;
+
+        margin-top: 30px;
+    }
+
+    .slider .list .item .title{
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .slider .list .item .content h7{
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .slider .list .item .description{
+        font-size: 14px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .package-selector{
+        margin-top: 15px;
+
+        transform: scale(0.9);
+        transform-origin: left;
+    }
+
+    .price{
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    /* THUMBNAILS MOBILE */
+
+    .thumbnail{
+        position: absolute;
+
+        bottom: 20px;
+        left: 0;
+
+        transform: none;
+
+        display: flex;
+        gap: 10px;
+
+        width: 100%;
+
+        padding: 0 10px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        justify-content: flex-start;
+
+        z-index: 100;
+    }
+
+    .thumbnail .item{
+        width: 70px;
+        height: 95px;
+
+        margin-left: 0;
+
+        flex-shrink: 0;
+    }
+
+    .thumbnail .item img{
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .thumbnail::-webkit-scrollbar{
+        display: none;
+    }
+
+    /* BOTONES */
+
+    .nextPrevArrows{
+        top: auto;
+
+        bottom: 130px;
+        right: 20px;
+    }
+
+    .nextPrevArrows button{
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
 }
