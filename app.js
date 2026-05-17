@@ -52,7 +52,12 @@ const productos = {
         { piezas: 4, precio: 125 },
         { piezas: 10, precio: 310 }
     ],
-
+brownie: [
+        { piezas: 2, precio: 60 },
+        { piezas: 4, precio: 115 },
+        { piezas: 6, precio: 170 },
+        { piezas: 8, precio: 220 }
+    ],
     conchas: [
         { piezas: 2, precio: 45 },
         { piezas: 6, precio: 120 },
@@ -72,25 +77,11 @@ const productos = {
         { piezas: 30, precio: 345 }
     ],
 
-    nuez: [
-        { piezas: 10, precio: 50 },
-        { piezas: 20, precio: 100 },
-        { piezas: 30, precio: 145 },
-        { piezas: 40, precio: 190 }
-    ],
-
-    naranja: [
-        { piezas: 5, precio: 50 },
-        { piezas: 10, precio: 100 },
-        { piezas: 20, precio: 190 },
-        { piezas: 30, precio: 270 }
-    ],
-
     miel: [
-        { piezas: 5, precio: 50 },
-        { piezas: 10, precio: 100 },
-        { piezas: 20, precio: 190 },
-        { piezas: 30, precio: 270 }
+        { piezas: 5, precio: 60 },
+        { piezas: 10, precio: 120 },
+        { piezas: 20, precio: 235 },
+        { piezas: 30, precio: 345 }
     ]
 }
 
