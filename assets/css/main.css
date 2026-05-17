@@ -2404,7 +2404,7 @@ body {
 
     /* TITULO */
     .hero h2{
-         font-size: 2.5rem;
+        font-size: 2.5rem;
         line-height: 1.1;
 
         padding-top: 90px;
@@ -2424,21 +2424,22 @@ body {
     }
 
     .hero .img-drop{
-    margin-top: -40px !important;
-    width: 150px !important;
+        margin-top: -40px !important;
+        width: 150px !important;
       
-}
-  .hero .button{
-    margin-top: -50px !important;
+    }
+    .hero .button{
+        margin-top: -50px !important;
   
-}
+    }
   
-.hero .h5{
-    display: block !important;
-    position: relative;
-    z-index: 5;
-    margin-top: 10px;
-    color: #000;
+    .hero .h5{
+        display: block !important;
+        position: relative;
+        z-index: 5;
+        margin-top: 10px;
+        color: #000;
+    }
 }
   
 
@@ -2487,7 +2488,7 @@ body {
     transform: scale(1.02);
 }
 /* =========================
-   FOOTER MOBILE
+  FOOTER MOBILE
 ========================= */
 
 @media (max-width: 768px){
@@ -2571,9 +2572,6 @@ body {
     }
 
 }
-
-
-
 
 
 /*--------------------------------------------------------------
