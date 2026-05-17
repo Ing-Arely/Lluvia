@@ -2426,6 +2426,14 @@ body {
     .hero .img-drop{
     margin-top: -40px !important;
     width: 150px !important;
+      
+}
+  .hero .button{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 5;
 }
   
 }
