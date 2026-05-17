@@ -910,8 +910,6 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
-  padding-top: 120px;
-
 }
 
 .hero h2 {
@@ -2364,6 +2362,7 @@ body {
 }
 /* HERO MOBILE */
 @media (max-width: 768px){
+
     .hero{
         height: 100vh;
         overflow: hidden;
@@ -2404,14 +2403,14 @@ body {
     }
 
     /* TITULO */
-   .hero h2{
-    font-size: 2.5rem;
-    line-height: 1.1;
-    margin-top: 80px;
+    .hero h2{
+        font-size: 2.5rem;
 
-    text-shadow:
-    0 8px 20px rgba(0,0,0,0.45);
-}
+        line-height: 1.1;
+
+        text-shadow:
+        0 8px 20px rgba(0,0,0,0.45);
+    }
 
     /* TEXTO */
     .hero p{
@@ -2428,14 +2427,6 @@ body {
         width: 180px !important;
 
         margin-top: 10px;
-    }
-
-}
-@media (max-width: 768px){
-
-    .button{
-        position: relative;
-        top: -40px; /* súbelo */
     }
 
 }
