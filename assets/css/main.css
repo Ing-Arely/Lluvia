@@ -2361,6 +2361,7 @@ body {
   transform: scale(1.1);
 }
 /* HERO MOBILE */
+/* HERO MOBILE */
 @media (max-width: 768px){
 
     .hero{
@@ -2371,17 +2372,12 @@ body {
     .hero img{
         width: 100%;
         height: 100%;
-
         object-fit: cover;
-
         object-position: center;
-
     }
 
-    /* overlay elegante */
     .hero::before{
         content: "";
-
         position: absolute;
         inset: 0;
 
@@ -2398,15 +2394,14 @@ body {
     .hero .container{
         position: relative;
         z-index: 2;
-
         padding-inline: 20px;
+        text-align: center;
     }
 
     /* TITULO */
     .hero h2{
         font-size: 2.5rem;
         line-height: 1.1;
-
         padding-top: 90px;
 
         text-shadow:
@@ -2416,29 +2411,33 @@ body {
     /* TEXTO */
     .hero p{
         font-size: 1rem;
-
         letter-spacing: 2px;
 
         text-shadow:
         0 5px 15px rgba(0,0,0,0.45);
     }
 
+    /* GOTA */
     .hero .img-drop{
-        margin-top: -40px !important;
+        margin-top: -20px !important;
         width: 150px !important;
-      
     }
+
+    /* BOTON WHATSAPP */
     .hero .button{
-        margin-top: -50px !important;
-  
-    }
-  
-    .hero .h5{
-        display: block !important;
+        margin-top: -90px !important;
         position: relative;
         z-index: 5;
-        margin-top: 10px;
-        color: #000;
+    }
+
+    /* TEXTO PEDIDOS */
+    .hero h5{
+        display: block !important;
+        margin-top: -15px !important;
+        position: relative;
+        z-index: 5;
+        color: #fff;
+        font-size: 16px;
     }
 }
   
