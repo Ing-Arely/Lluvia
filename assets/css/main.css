@@ -2429,14 +2429,18 @@ body {
       
 }
   .hero .button{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    position: relative;
-    z-index: 5;
-}
+    margin-top: -40px !important;
   
 }
+  
+.hero .h5{
+    display: block !important;
+    position: relative;
+    z-index: 5;
+    margin-top: 10px;
+    color: #000;
+}
+  
 
 /* MAPA MOBILE */
 @media (max-width: 768px){
