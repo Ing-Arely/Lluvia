@@ -910,6 +910,8 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+  padding-top: 120px;
+
 }
 
 .hero h2 {
@@ -2362,7 +2364,6 @@ body {
 }
 /* HERO MOBILE */
 @media (max-width: 768px){
-
     .hero{
         height: 100vh;
         overflow: hidden;
@@ -2403,14 +2404,14 @@ body {
     }
 
     /* TITULO */
-    .hero h2{
-        font-size: 2.5rem;
+   .hero h2{
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-top: 80px;
 
-        line-height: 1.1;
-
-        text-shadow:
-        0 8px 20px rgba(0,0,0,0.45);
-    }
+    text-shadow:
+    0 8px 20px rgba(0,0,0,0.45);
+}
 
     /* TEXTO */
     .hero p{
