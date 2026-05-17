@@ -2,11 +2,8 @@ let nextBtn = document.querySelector('.next')
 let prevBtn = document.querySelector('.prev')
 
 let slider = document.querySelector('.slider')
-
-/* ✅ CORREGIDO */
 let sliderList = slider.querySelector('.list')
-
-let thumbnail = document.querySelector('.slider .thumbnail')
+let thumbnail = document.querySelector('.thumbnail')
 let thumbnailItems = thumbnail.querySelectorAll('.item')
 
 thumbnail.appendChild(thumbnailItems[0])
@@ -24,7 +21,7 @@ prevBtn.onclick = function () {
 function moveSlider(direction) {
 
     let sliderItems = sliderList.querySelectorAll('.item')
-    let thumbnailItems = document.querySelectorAll('.thumbnail .item')
+    let thumbnailItems = thumbnail.querySelectorAll('.item')
 
     if(direction === 'next'){
 
@@ -43,19 +40,14 @@ function moveSlider(direction) {
 
     slider.addEventListener('animationend', function(){
 
-        if(direction === 'next'){
-            slider.classList.remove('next')
-        } else {
-            slider.classList.remove('prev')
-        }
+        slider.classList.remove('next')
+        slider.classList.remove('prev')
 
     }, { once: true })
 }
 
-
-
 /* =========================
-   CONFIGURACIÓN PRODUCTOS
+   PRODUCTOS
 ========================= */
 
 const productos = {
@@ -100,14 +92,11 @@ const productos = {
     ]
 }
 
-
-
 /* =========================
    BOTONES + Y -
 ========================= */
 
-/* ✅ CORREGIDO */
-sliderList.querySelectorAll('.item').forEach(item => {
+document.querySelectorAll('.slider .list .item').forEach(item => {
 
     let tipo = item.dataset.producto
 
@@ -115,7 +104,6 @@ sliderList.querySelectorAll('.item').forEach(item => {
 
     let plus = item.querySelector('.plus')
     let minus = item.querySelector('.minus')
-
     let quantityText = item.querySelector('.quantity')
     let priceText = item.querySelector('.price')
 
@@ -123,7 +111,6 @@ sliderList.querySelectorAll('.item').forEach(item => {
 
     let index = 0
 
-    // ACTUALIZAR
     function actualizar(){
 
         quantityText.innerText =
@@ -135,7 +122,7 @@ sliderList.querySelectorAll('.item').forEach(item => {
 
     actualizar()
 
-    // +
+    // BOTÓN +
     plus.addEventListener('click', () => {
 
         if(index < paquetes.length - 1){
@@ -143,10 +130,9 @@ sliderList.querySelectorAll('.item').forEach(item => {
             index++
             actualizar()
         }
-
     })
 
-    // -
+    // BOTÓN -
     minus.addEventListener('click', () => {
 
         if(index > 0){
@@ -154,7 +140,5 @@ sliderList.querySelectorAll('.item').forEach(item => {
             index--
             actualizar()
         }
-
     })
-
 })
