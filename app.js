@@ -87,7 +87,7 @@ brownie: [
 
 
 // SELECCIONAR TODOS LOS ITEMS
-document.querySelectorAll('.item').forEach(item => {
+sliderList.querySelectorAll('.item').forEach(item => {
 
     let tipo = item.dataset.producto
 
@@ -101,7 +101,6 @@ document.querySelectorAll('.item').forEach(item => {
     let paquetes = productos[tipo]
     let index = 0
 
-    // ACTUALIZAR
     function actualizar() {
 
         quantityText.innerText =
@@ -113,7 +112,6 @@ document.querySelectorAll('.item').forEach(item => {
 
     actualizar()
 
-    // +
     plus.addEventListener('click', () => {
 
         if(index < paquetes.length - 1){
@@ -123,7 +121,6 @@ document.querySelectorAll('.item').forEach(item => {
 
     })
 
-    // -
     minus.addEventListener('click', () => {
 
         if(index > 0){
