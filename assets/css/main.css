@@ -2427,26 +2427,7 @@ body {
     margin-top: -40px !important;
     width: 150px !important;
 }
-
-/* BOTON WHATSAPP */
-.hero .button{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    position: relative;
-    z-index: 5;
-}
-
-/* TEXTO PEDIDOS */
-.hero .hero-texto,
-.hero .pedidos-text{
-    display: block !important;
-    position: relative;
-    z-index: 5;
-    margin-top: 10px;
-    color: #000;
-}
-
+  
 }
 
 /* MAPA MOBILE */
