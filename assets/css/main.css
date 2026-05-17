@@ -2423,24 +2423,33 @@ body {
         0 5px 15px rgba(0,0,0,0.45);
     }
 
-    .hero .img-drop{
-        margin-top: -40px !important;
-        width: 150px !important;
-      
-    }
-    .hero .button{
-        margin-top: -40px !important;
-  
-    }
-  
-    .hero .h5{
-        display: block !important;
-        margin-top: -40px !important;
-        position: relative;
-        z-index: 5;
-        margin-top: 10px;
-        color: #000;
-    }
+    /* GOTA */
+.hero .img-drop{
+    margin-top: -20px !important;
+    width: 150px !important;
+}
+
+/* BOTON WHATSAPP */
+.hero .button{
+    position: relative;
+    top: -120px;
+    z-index: 10;
+}
+
+/* TEXTO PEDIDOS */
+.hero h5{
+    position: relative;
+    top: -115px;
+
+    display: block !important;
+
+    z-index: 10;
+
+    color: #fff;
+    font-size: 16px;
+
+    margin: 0;
+}
 }
   
 
