@@ -2433,98 +2433,193 @@ body {
   filter: drop-shadow(0 0 6px white);
   transform: scale(1.1);
 }
-/* HERO MOBILE */
-@media (max-width: 768px){
+/* ==================================================
+   FULLSCREEN IPHONE FIX
+================================================== */
 
-    .hero{
-        height: 100vh;
-        overflow: hidden;
-    }
+html,
+body{
+    margin: 0;
+    padding: 0;
 
-    .hero img{
-        width: 100%;
-        height: 100%;
+    width: 100%;
+    min-height: 100dvh;
 
-        object-fit: cover;
+    overflow-x: hidden;
 
-        object-position: center;
+    background: #ffffff;
+}
 
-    }
+/* SAFE AREAS IPHONE */
+body{
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
 
-    /* overlay elegante */
-    .hero::before{
-        content: "";
+/* ==================================================
+   HEADER / NAVBAR
+================================================== */
 
-        position: absolute;
-        inset: 0;
+.header,
+.navbar{
+    position: fixed;
 
-        background: linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.55)
-        );
+    top: 0;
+    left: 0;
 
-        z-index: 1;
-    }
+    width: 100%;
 
-    .hero .container{
-        position: relative;
-        z-index: 2;
+    z-index: 9999;
 
-        padding-inline: 20px;
-    }
+    background: rgba(255,255,255,0.08);
 
-    /* TITULO */
-    .hero h2{
-        font-size: 2.5rem;
-        line-height: 1.1;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
-        padding-top: 90px;
+    border-bottom:
+    1px solid rgba(255,255,255,0.15);
 
-        text-shadow:
-        0 8px 20px rgba(0,0,0,0.45);
-    }
+    box-shadow:
+    0 8px 30px rgba(0,0,0,0.08);
+}
 
-    /* TEXTO */
-    .hero p{
-        font-size: 1rem;
+/* TEXTO MENU */
+.navmenu a,
+.mobile-nav-toggle,
+.header .logo h1{
+    color: #ffffff !important;
 
-        letter-spacing: 2px;
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,255,255,0.35);
+}
 
-        text-shadow:
-        0 5px 15px rgba(0,0,0,0.45);
-    }
+/* ==================================================
+   HERO FULLSCREEN
+================================================== */
 
-    .hero .img-drop{
-        margin-top: -40px !important;
-        width: 150px !important;
-      
-    }
- /* BOTON WHATSAPP */
+.hero{
+    position: relative;
+
+    width: 100%;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGEN HERO */
+.hero img{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+/* OVERLAY OSCURO */
+.hero::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.55)
+    );
+
+    z-index: 2;
+}
+
+/* DIFUMINADO ABAJO */
+.hero::after{
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 220px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.15) 40%,
+        #ffffff 100%
+    );
+
+    z-index: 2;
+}
+
+/* CONTENIDO HERO */
+.hero .container{
+    position: relative;
+
+    z-index: 3;
+
+    text-align: center;
+
+    padding-inline: 20px;
+}
+
+/* TITULO */
+.hero h2{
+    color: white;
+
+    font-size: 3rem;
+    line-height: 1.1;
+
+    text-shadow:
+    0 8px 25px rgba(0,0,0,0.45),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+/* SUBTITULO */
+.hero p,
+.hero h5{
+    color: white;
+
+    text-shadow:
+    0 5px 15px rgba(0,0,0,0.45);
+}
+
+/* BOTON */
 .hero .button{
     position: relative;
-    top: -120px;
-    z-index: 10;
+    z-index: 4;
 }
 
-/* TEXTO PEDIDOS */
-.hero h5{
-    position: relative;
-    top: -115px;
+/* ==================================================
+   MOBILE
+================================================== */
 
-    display: block !important;
+@media (max-width: 768px){
 
-    z-index: 10;
+    .hero h2{
+        font-size: 2.5rem;
+    }
 
-    color: #fff;
-    font-size: 16px;
+    .hero p{
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
 
-    margin: 0;
-      }
 }
-  
-
 /* MAPA MOBILE */
 @media (max-width: 768px){
 
