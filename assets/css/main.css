@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-/*-------------------------------------------------------------
+/*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
@@ -31,7 +31,7 @@
 :root {
   --nav-color: #000000;  /* The default color of the main navmenu links */
   --nav-hover-color: #19191961; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #0a0a0aa1; /* Used as the background color for mobile navigation menu */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
@@ -46,7 +46,7 @@
 
 .dark-background {
   --background-color: #273f49;
-  --default-color: #000000;
+  --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #395c6a;
   --contrast-color: #ffffff;
@@ -431,7 +431,7 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(33, 37, 41, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     transition: 0.3s;
   }
 
@@ -446,8 +446,8 @@ h6 {
 .footer{
     position: relative;
 
-    background-image: url("../img/wavew.png");
-
+   /* background-image: url("../img/wavechocoB4.jpeg");*/
+    background-color: #ffffff;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -795,12 +795,72 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-  color:rgb(255, 255, 255);
-    background-image: url("../img/fond1.jpeg");
+  position: relative;
+  color: rgb(255, 255, 255);
+
+  background-image: url("../img/cafecrema.jpeg");
+  background-size: cover;
+  background-position: center;
+
   padding: 60px 0;
+
   scroll-margin-top: 74px;
-  overflow: clip;
+
+  overflow: hidden;
 }
+
+/* DIFUMINADO ARRIBA */
+section::before,
+.section::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0) 10%,
+    #ffffff 100%
+
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* DIFUMINADO ABAJO */
+section::after,
+.section::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    #ffffff 100%
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
+section > *,
+.section > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
 
 @media (max-width: 1199px) {
 
@@ -809,6 +869,7 @@ section,
     scroll-margin-top: 82px;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Global Section Titles
@@ -1471,7 +1532,25 @@ body {
   position: relative;
   clip-path: inset(0);
 }
+.call-to-action::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
 
+  background: linear-gradient(
+    to bottom,
+    rgba(93, 127, 152, 0) 0%,
+    rgba(82, 103, 119, 0) 35%,
+    rgb(255, 255, 255) 70%,
+    #ffffff 100%
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
 .call-to-action img {
   position: fixed;
   top: 0;
@@ -1483,13 +1562,7 @@ body {
   z-index: 1;
 }
 
-.call-to-action:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
+
 
 .call-to-action .container {
   position: relative;
@@ -2361,7 +2434,6 @@ body {
   transform: scale(1.1);
 }
 /* HERO MOBILE */
-
 @media (max-width: 768px){
 
     .hero{
@@ -2424,33 +2496,24 @@ body {
         0 5px 15px rgba(0,0,0,0.45);
     }
 
-    /* GOTA */
-.hero .img-drop{
-    margin-top: -20px !important;
-    width: 150px !important;
-}
-
-/* BOTON WHATSAPP */
-.hero .button{
-    position: relative;
-    top: -120px;
-    z-index: 10;
-}
-
-/* TEXTO PEDIDOS */
-.hero h5{
-    position: relative;
-    top: -115px;
-
-    display: block !important;
-
-    z-index: 10;
-
-    color: #fff;
-    font-size: 16px;
-
-    margin: 0;
-}
+    .hero .img-drop{
+        margin-top: -40px !important;
+        width: 150px !important;
+      
+    }
+    .hero .button{
+        margin-top: -40px !important;
+  
+    }
+  
+    .hero .h5{
+        display: block !important;
+        margin-top: -40px !important;
+        position: relative;
+        z-index: 5;
+        margin-top: 10px;
+        color: #000;
+    }
 }
   
 
