@@ -995,26 +995,16 @@ section > *,
     color: #000;
   text-shadow:
     0 5px 15px rgba(0,0,0,0.45);
-/* BOTON WHATSAPP */
-.hero .button{
-    position: relative;
-    top: -120px;
-    z-index: 10;
 }
-
-/* TEXTO PEDIDOS */
-.hero h5{
-    position: relative;
-    top: -115px;
-
-    display: block !important;
-
-    z-index: 10;
-
-    color: #fff;
-    font-size: 16px;
-
-    margin: 0;
+.hero h5 {
+  color: var(--default-color);
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+    color: #ffffff;
+  text-shadow: -1px 0 2px #ffffff;
 }
 
 @media (max-width: 640px) {
@@ -2511,19 +2501,27 @@ body {
         width: 150px !important;
       
     }
-    .hero .button{
-        margin-top: -40px !important;
-  
-    }
-  
-    .hero .h5{
-        display: block !important;
-        margin-top: -40px !important;
-        position: relative;
-        z-index: 5;
-        margin-top: 10px;
-        color: #000;
-    }
+ /* BOTON WHATSAPP */
+.hero .button{
+    position: relative;
+    top: -120px;
+    z-index: 10;
+}
+
+/* TEXTO PEDIDOS */
+.hero h5{
+    position: relative;
+    top: -115px;
+
+    display: block !important;
+
+    z-index: 10;
+
+    color: #fff;
+    font-size: 16px;
+
+    margin: 0;
+      }
 }
   
 
