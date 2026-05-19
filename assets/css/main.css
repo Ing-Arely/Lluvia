@@ -2460,8 +2460,9 @@ body{
 @media (max-width: 768px){
 
     .hero{
-  min-height: 100dvh;
-        overflow: hidden;
+.hero {
+  min-height: 100vh;
+  overflow: hidden;
     }
 
 .hero img {
