@@ -2460,19 +2460,21 @@ body{
 @media (max-width: 768px){
 
     .hero{
-        height: 100vh;
+  min-height: 100dvh;
         overflow: hidden;
     }
 
-    .hero img{
-        width: 100%;
-        height: 100%;
+    .hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 
-        object-fit: cover;
-
-        object-position: center;
-
-    }
+  margin-bottom: 0;
+}
 
     /* overlay elegante */
     .hero::before{
@@ -2546,7 +2548,34 @@ body{
     margin: 0;
       }
 }
-  
+  @media (max-width: 768px){
+
+  .call-to-action{
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .call-to-action img{
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      z-index: 1;
+  }
+
+  .call-to-action .container{
+      position: relative;
+      z-index: 3;
+  }
+
+}
 
 /* MAPA MOBILE */
 @media (max-width: 768px){
