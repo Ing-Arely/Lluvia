@@ -2577,7 +2577,31 @@ body{
   }
 
 }
+@media (max-width: 768px){
 
+  section,
+  .section{
+
+      background-size: cover;
+
+      background-position: center center;
+
+      background-repeat: no-repeat;
+
+      background-attachment: scroll;
+
+      overflow: hidden;
+  }
+
+  section::before,
+  .section::before,
+  section::after,
+  .section::after{
+
+      height: 90px;
+  }
+
+}
 /* MAPA MOBILE */
 @media (max-width: 768px){
 
