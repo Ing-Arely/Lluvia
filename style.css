@@ -564,15 +564,26 @@ a{
 }
 
 .cart-box{
+
     width: 90%;
     max-width: 400px;
 
-    background: white;
-    color: black;
+    background: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    text-shadow: rgb(255, 255, 255) 0px 3px 10px;
 
-    border-radius: 25px;
+    padding: 30px;
 
-    padding: 25px;
+    border-radius: 20px;
+}
+.cart-box h7
+{
+  font-size: 15px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: rgba(255, 255, 255, 0.6) 0px 3px 10px;
 }
 
 .cart-box h2{
