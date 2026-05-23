@@ -2439,42 +2439,51 @@ body{
 }
 
 /* HERO MOBILE */
-/* HERO MOBILE */
-@media (max-width: 768px){ 
-  .hero{ height: 100vh; overflow: hidden; }
-  .hero img{ 
-    width: 100%; 
-    height: 150%; 
-    object-fit: cover; 
-    object-position: center; }
-  /* overlay elegante */ 
-  .hero::before{ content: ""; 
-  position: absolute; 
-  inset: 0; 
-  background: linear-gradient( 
-    to bottom, 
-    rgba(0,0,0,0.35), 
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55) );
-    z-index: 1; } 
-  .hero .container{
-    position: relative;
-    z-index: 2; 
-    padding-inline: 20px; } 
-  /* TITULO */
-  .hero h2{ 
-    font-size: 2.5rem;
-    line-height: 1.1;
-    padding-top: 90px;
-    text-shadow: 0 8px 20px rgba(0,0,0,0.45); }
-  /* TEXTO */ 
-  .hero p{
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.45); } 
-  .hero .img-drop{ 
-    margin-top: -40px !important;
-    width: 150px !important; }
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fondo */
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gota */
+.img-drop {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42vw;
+  max-width: 180px;
+  height: auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100vh;
+  }
+
+  .hero-bg {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .img-drop {
+    width: 48vw;
+    max-width: 170px;
+    bottom: 20%;
+  }
+
 }
  
   @media (max-width: 768px){
