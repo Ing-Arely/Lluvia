@@ -138,7 +138,12 @@ const deliveryNote = document.getElementById('delivery-note')
 const closeCartBtn = document.querySelector('.close-cart')
 const whatsappText = document.querySelector('.whatsapp-text')
 const cartTotal = document.getElementById('cart-total')
+const cartCount = document.querySelector('.cart-count')
 
+function actualizarBurbuja(){
+
+    cartCount.innerText = carrito.length
+}
 /* =========================
    ABRIR / CERRAR CARRITO
 ========================= */
@@ -183,7 +188,7 @@ document.querySelectorAll('.add-cart').forEach(button => {
             precio,
             imagen
         })
-
+        actualizarBurbuja()
         actualizarCarrito()
     })
 })
@@ -199,7 +204,7 @@ function actualizarCarrito(){
 
         cartItems.innerHTML = `
             <div class="empty-cart">
-                🛒 Tu carrito está vacío
+                Tu canasta está vacía
             </div>
         `
 
@@ -263,7 +268,10 @@ cartTotal.innerText = `Total: $${total} MXN`
 ========================= */
 
 function eliminarProducto(index){
+
     carrito.splice(index, 1)
+
+    actualizarBurbuja()
     actualizarCarrito()
 }
 
@@ -303,5 +311,5 @@ checkoutBtn.addEventListener('click', () => {
 /* =========================
    INICIALIZAR
 ========================= */
-
+actualizarBurbuja()
 actualizarCarrito()
