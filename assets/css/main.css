@@ -2487,6 +2487,19 @@ body{
 }
  
 @media (max-width: 768px){
+    .img-lluvia{
+        position: relative !important;
+
+        width: 90% !important;
+        max-width: 320px;
+
+        height: auto !important;
+
+        display: block;
+        margin: 0 auto;
+
+        z-index: 5;
+    }
 
     .call-to-action{
         min-height: 70vh;
