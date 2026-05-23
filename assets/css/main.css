@@ -2439,115 +2439,50 @@ body{
 }
 
 /* HERO MOBILE */
-@media (max-width: 768px){
-
-  .hero{
-    min-height: 100svh;
-    height: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    position: relative;
-
-    padding: 0 20px;
-  }
-
-  /* IMAGEN */
-  .hero img{
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    margin: 0;
-    padding: 0;
-
-    z-index: 1;
-  }
-
-  /* OVERLAY */
-  .hero::before{
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.15),
-        rgba(0,0,0,.55)
-      );
-
-    z-index: 2;
-  }
-
-  /* DIFUMINADO ABAJO */
-  .hero::after{
-    height: 120px;
-  }
-
-  /* CONTENIDO */
+/* HERO MOBILE */
+@media (max-width: 768px){ 
+  .hero{ height: 100vh; overflow: hidden; }
+  .hero img{ 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; }
+  /* overlay elegante */ 
+  .hero::before{ content: ""; 
+  position: absolute; 
+  inset: 0; 
+  background: linear-gradient( 
+    to bottom, 
+    rgba(0,0,0,0.35), 
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55) );
+    z-index: 1; } 
   .hero .container{
     position: relative;
-    z-index: 3;
-
-    text-align: center;
-  }
-
+    z-index: 2; 
+    padding-inline: 20px; } 
   /* TITULO */
-  .hero h2{
-    font-size: 2.4rem;
+  .hero h2{ 
+    font-size: 2.5rem;
     line-height: 1.1;
-
-    margin-top: 0;
-    margin-bottom: 15px;
-
-    padding-top: 0;
-
-    color: #fff;
-
-    text-shadow:
-      0 5px 20px rgba(0,0,0,.45);
-  }
-
-  /* TEXTO */
+    padding-top: 90px;
+    text-shadow: 0 8px 20px rgba(0,0,0,0.45); }
+  /* TEXTO */ 
   .hero p{
-    font-size: .95rem;
-
+    font-size: 1rem;
     letter-spacing: 2px;
-
-    margin-bottom: 40px;
-
-    color: #fff;
-
-    text-shadow:
-      0 5px 15px rgba(0,0,0,.45);
-  }
-
-  /* GOTA */
-  .hero .img-drop{
-    width: 140px;
-
-    padding-top: 0;
-
-    margin-top: 0;
-  }
-
-  /* BOTON */
-  .hero .button{
-    margin-top: 10px;
-  }
-
+    text-shadow: 0 5px 15px rgba(0,0,0,0.45); } 
+  .hero .img-drop{ 
+    margin-top: -40px !important;
+    width: 150px !important; }
+  .hero .button{ 
+    margin-top: -40px !important; }
+  .hero .h5{
+    display: block !important;
+    margin-top: -40px !important; 
+    position: relative;
+    z-index: 5;
+    margin-top: 10px; color: #000; }
 }
  
   @media (max-width: 768px){
