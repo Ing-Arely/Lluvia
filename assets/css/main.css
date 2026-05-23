@@ -30,7 +30,7 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #000000;  /* The default color of the main navmenu links */
-  --nav-hover-color: #19191961; /* Applied to main navmenu links when they are hovered over or active */
+ --nav-hover-color: rgba(25, 25, 25, 0.38);/* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -797,11 +797,7 @@ section,
 .section {
   position: relative;
   color: rgb(255, 255, 255);
-
-  background-image: url("../img/cafecrema.jpeg");
-  background-size: cover;
-  background-position: center;
-
+background-color: #ffffff;
   padding: 60px 0;
 
   scroll-margin-top: 74px;
@@ -921,17 +917,18 @@ section > *,
 
 
 
-
-.hero .img-drop{
-  width: 20%;
-  min-height: 10vh;
-  position: relative;
-  padding-top: 100px;
-  padding: 100px  5px ;
-  padding-bottom: 100px;
+.img-center{
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-size: cover;
+  width: 100%;
+}
+.hero .img-drop{
+  width: 200px;
+  padding-top: 100px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
   animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
 }
 
@@ -946,9 +943,9 @@ section > *,
 
   background: linear-gradient(
     to bottom,
-    rgba(93, 127, 152, 0) 0%,
-    rgba(82, 103, 119, 0) 35%,
-    rgba(161, 80, 80, 0) 70%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.781) 70%,
     #ffffff 100%
   );
 
@@ -961,11 +958,12 @@ section > *,
   inset: 0;
   display: block;
   width: 100%;
-  height: 110%;
-  margin-bottom:100px;
+  height: 125%;
+  margin-bottom:150px;
   object-fit: cover;
   z-index: 1;
-  
+  margin-top: 40px;
+  padding-bottom: 250px;
 }
 
 .hero .container {
@@ -991,6 +989,7 @@ section > *,
  font-size: 1.3rem;
   font-weight: 700;
    letter-spacing: 3px;
+   margin-bottom: 150px;
   text-transform: uppercase;
     color: #000;
   text-shadow:
@@ -1006,9 +1005,18 @@ section > *,
     color: #ffffff;
   text-shadow: -1px 0 2px #ffffff;
 }
-
+.hero h6 {
+  color: var(--default-color);
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+    color: #000000;
+  text-shadow: -1px 0 2px #ffffff;
+}
 @media (max-width: 640px) {
-  .hero h1 {
+  .hero h2 {
     font-size: 30px;
     line-height: 36px;
   }
@@ -1029,10 +1037,7 @@ section > *,
 .hero .btn-scroll:hover {
   color: var(--accent-color);
 }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+
 
 /* From Uiverse.io by Smit-Prajapati */
 .button {
@@ -1300,26 +1305,24 @@ body {
   animation: opacityPulse 5s ease infinite;
 }
 
-.btn-wrapper:hover {
-  .text-overlay {
-    transform: scale(1.1);
-  }
-
-  .gradient-btn {
-    color: #0000;
-    text-shadow: 0 0 0 #0000;
-  }
+/* HOVER */
+.btn-wrapper:hover .text-overlay{
+  transform: scale(1.1);
 }
 
-.btn-wrapper:active {
-  .text-overlay {
-    transform: scale(0.95);
-  }
+.btn-wrapper:hover .gradient-btn{
+  color: transparent;
+  text-shadow: none;
+}
 
-  .gradient-btn {
-    color: #0000;
-    text-shadow: 0 0 0 #0000;
-  }
+/* ACTIVE */
+.btn-wrapper:active .text-overlay{
+  transform: scale(0.95);
+}
+
+.btn-wrapper:active .gradient-btn{
+  color: transparent;
+  text-shadow: none;
 }
 
 .light {
@@ -1527,84 +1530,56 @@ body {
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
-.call-to-action {
-  padding: 80px 0;
+.call-to-action{
   position: relative;
-  clip-path: inset(0);
+  overflow: hidden;
+
+  padding: 120px 0;
+
+  min-height: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.call-to-action::after {
-  content: "";
+
+/* FONDO */
+
+.bg-call{
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 250px;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(93, 127, 152, 0) 0%,
-    rgba(82, 103, 119, 0) 35%,
-    rgb(255, 255, 255) 70%,
-    #ffffff 100%
-  );
-
-  z-index: 2;
-  pointer-events: none;
-}
-.call-to-action img {
-  position: fixed;
   top: 0;
   left: 0;
-  display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   z-index: 1;
 }
 
+/* CONTENIDO */
 
-
-.call-to-action .container {
+.call-to-action .container{
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
 
-.call-to-action h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--default-color);
-}
+/* IMAGEN */
 
-.call-to-action p {
-  color: var(--default-color);
-}
+.img-lluvia{
+  width: 700px;
+  max-width: 90%;
 
-.call-to-action .cta-btn {
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 5px;
-  transition: 0.5s;
-  margin: 10px;
-  border: 2px solid var(--contrast-color);
-  color: var(--contrast-color);
-}
-
-.call-to-action .cta-btn:hover {
-  background: var(--accent-color);
-  border: 2px solid var(--accent-color);
-}
-
-.call-to-action .img-lluvia {
   display: block;
-  margin: 0 auto;
-  position: relative;
-  animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
-}
+  margin: auto;
 
+  position: relative;
+  z-index: 10;
+    animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
+
+}
 
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -2046,188 +2021,193 @@ body {
 
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
+/*======================================
+=            GENERAL SECTION           =
+======================================*/
+
+section,
+.section{
+  padding: 30px 0;
+}
+
+/*======================================
+=            FONDO CAFÉ                =
+======================================*/
+
+.cafe-bg{
+    background-image: url("../img/cafecrema.jpeg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    padding: 90px 0;
+
+    overflow: hidden;
+}
 
 
-/* =========================
-   MAPA GLASSMORPHISM
-========================= */
+#contact{
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+}
+/*======================================
+=            CONTACT SECTION           =
+======================================*/
 
-/* CONTENEDOR COMPLETO */
+#contact{
+    position: relative;
+    padding-bottom: 80px !important;
+}
+
+#contact .container{
+    position: relative;
+    z-index: 2;
+}
+
+/*======================================
+=            GLASS CARD                =
+======================================*/
+
 .info-wrap{
-    background: rgba(255, 255, 255, 0.10) !important;
+    background: rgba(255,255,255,0.14);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
     border: 1px solid rgba(255,255,255,0.18);
 
-    border-radius: 25px;
+    border-radius: 35px;
 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.15);
 
-    padding: 30px;
+    padding: 35px;
+
+    max-width: 700px;
+    margin: auto;
 }
 
+/*======================================
+=            TOP CONTENT               =
+======================================*/
 
-/* QUITAR FONDOS BLANCOS INTERNOS */
-.info-item{
-    background: transparent !important;
-}
-
-
-/* MAPA */
-.mapa-container{
-    background: rgba(255,255,255,0.05);
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    margin-top: 20px;
-}
-
-
-/* IFRAME */
-.mapa-container iframe{
-    width: 100%;
-    height: 300px;
-
-    border: none;
-
-    opacity: 0.9;
-
-    display: block;
-}
-.header{
-    background: rgba(20,20,20,0.25) !important;
-}
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-#contact .card{
-   background: transparent !important;
-   border: none !important;
-   box-shadow: none !important;
-}
-
-/* CONTENIDO SUPERIOR */
 .contact-top{
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
+    gap: 40px;
 
-    gap: 30px;
-
-    flex-wrap: wrap;
+    margin-bottom: 25px;
 }
 
+/* INFO */
 
-/* LOGO */
-.contact-logo{
+.contact-info{
+    flex: 1;
+}
+
+.info-item{
+    margin-bottom: 25px;
+}
+
+.info-item i{
+    width: 45px;
+    height: 45px;
+
     display: flex;
-
-    justify-content: center;
-    padding-right: 55px;
     align-items: center;
-    animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.18);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    margin-right: 15px;
 }
 
+.info-item p{
+    margin: 0;
+    color: #000000;
+}
+
+/*======================================
+=               LOGO                   =
+======================================*/
+
+.contact-logo{
+    flex: 0 0 220px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .contact-logo img{
     width: 180px;
 
-    opacity: 0.95;
+    opacity: .95;
 
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
-
-    transition: 0.4s ease;
+    filter:
+    drop-shadow(0 10px 20px rgba(0,0,0,.25));
 }
 
+/*======================================
+=               MAPA                   =
+======================================*/
 
-/* EFECTO HOVER */
-.contact-logo img:hover{
-    transform: scale(1.05) rotate(-2deg);
-}
 .mapa-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-   
+    width: 100%;
+    height: 260px;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin-top: 10px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
 }
 
 .mapa-container iframe{
-    max-width: 700px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
+
     border: 0;
-    border-radius: 18px;
+
+    display: block;
 }
 
-.contact .info-wrap {
-  background-color: white;
-  padding: 30px;
-  border-radius: 50px;
+/*======================================
+=            RESPONSIVE                =
+======================================*/
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.189);
+@media (max-width:768px){
+
+    .contact-top{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-logo{
+        margin-top: 10px;
+    }
+
+    .mapa-container{
+        height: 220px;
+    }
+
+    .info-item{
+        justify-content: center;
+    }
 }
 
-@media (max-width: 575px) {
-  .contact .info-wrap {
-    padding: 20px;
-  }
-}
-
-
-.contact .info-item {
-  margin-bottom: 40px;
-}
-
-.contact .info-item i {
-  font-size: 20px;
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .php-email-form {
-  background-color: var(--surface-color);
-  height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
-  }
-}
 
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
@@ -2439,17 +2419,19 @@ body {
 
 html,
 body{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    width: 100%;
-    min-height: 100dvh;
+  width: 100%;
+  min-height: 100dvh;
 
-    overflow-x: hidden;
+  overflow-x: hidden;
 
-    background: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+
+  font-family: var(--default-font);
 }
-
 /* SAFE AREAS IPHONE */
 body{
     padding-top: env(safe-area-inset-top);
