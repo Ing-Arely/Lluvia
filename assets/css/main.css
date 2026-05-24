@@ -314,132 +314,381 @@ h6 {
 }
 
 /* Mobile Navigation */
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
 @media (max-width: 1199px) {
+
+  /* BOTON HAMBURGUESA */
   .mobile-nav-toggle {
-    color: var(--nav-color);
-    font-size: 28px;
-    line-height: 0;
-    margin-right: 10px;
+    color: #000;
+    font-size: 30px;
     cursor: pointer;
-    transition: color 0.3s;
+    z-index: 9999;
+    position: relative;
+    transition: 0.3s;
   }
 
+  /* CONTENEDOR NAV */
   .navmenu {
     padding: 0;
     z-index: 9997;
   }
 
+  /* OVERLAY */
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 9997;
+  }
+
+  /* MENU */
   .navmenu ul {
+
     display: none;
-    list-style: none;
-    position: absolute;
-    inset: 60px 20px 20px 20px;
-    padding: 10px 0;
+
+    position: fixed;
+
+    top: 80px;
+    left: 15px;
+    right: 15px;
+
     margin: 0;
-    border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
-    overflow-y: auto;
-    transition: 0.3s;
+    padding: 20px 15px;
+
+    list-style: none;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+      0 15px 40px rgba(0,0,0,0.18);
+
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+
+    overflow-y: auto;
+
+    max-height: calc(100vh - 120px);
+
+    transition: 0.3s ease;
+  }
+
+  /* ABRIR MENU */
+  .mobile-nav-active .navmenu > ul {
+    display: block;
+  }
+
+  /* LINKS */
+  .navmenu li {
+    width: 100%;
   }
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
-    padding: 10px 20px;
-    font-family: var(--nav-font);
-    font-size: 17px;
+
+    color: #000 !important;
+
+    font-size: 18px;
     font-weight: 500;
+
+    font-family: var(--nav-font);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    white-space: nowrap;
-    transition: 0.3s;
+
+    padding: 14px 18px;
+
+    margin-bottom: 6px;
+
+    border-radius: 14px;
+
+    transition: 0.3s ease;
   }
 
+  /* HOVER */
+  .navmenu a:hover,
+  .navmenu .active {
+
+    background: rgba(99,100,166,0.10);
+
+    color: #6364a6 !important;
+  }
+
+  /* ICONOS */
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
+
     width: 30px;
     height: 30px;
+
+    border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+
+    background: rgba(99,100,166,0.10);
+
+    font-size: 13px;
+
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
-  .navmenu a i:hover,
-  .navmenu a:focus i:hover {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
+  .navmenu a:hover i {
+    background: #6364a6;
+    color: white;
   }
 
-  .navmenu a:hover,
-  .navmenu .active,
-  .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
-  }
-
-  .navmenu .active i,
-  .navmenu .active:focus i {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    transform: rotate(180deg);
-  }
-
+  /* DROPDOWN */
   .navmenu .dropdown ul {
+
     position: static;
+
     display: none;
-    z-index: 99;
-    padding: 10px 0;
-    margin: 10px 20px;
-    background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+    margin: 8px 0 8px 15px;
+
+    padding: 10px;
+
+    border-radius: 15px;
+
+    background: rgba(99,100,166,0.05);
+
     box-shadow: none;
-    transition: all 0.5s ease-in-out;
   }
 
-  .navmenu .dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
-  }
-
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
-    background-color: rgba(33, 37, 41, 0.03);
   }
 
-  .mobile-nav-active {
-    overflow: hidden;
-  }
-
+  /* BOTON X */
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
-    position: absolute;
-    font-size: 32px;
-    top: 15px;
-    right: 15px;
-    margin-right: 0;
+
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    color: #000;
+
+    font-size: 34px;
+
     z-index: 9999;
   }
 
-  .mobile-nav-active .navmenu {
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.8);
-    transition: 0.3s;
-  }
+}
+/* =================================
+   MOBILE ICONS
+================================= */
 
-  .mobile-nav-active .navmenu>ul {
-    display: block;
-  }
+.mobile-icons{
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  position: fixed;
+
+  top: 18px;
+  right: 15px;
+
+  z-index: 99999;
 }
 
+/* BOTON CARRITO MOBILE */
+
+#open-cart-mobile{
+
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+/* ICONO */
+
+#open-cart-mobile i{
+
+  font-size: 22px;
+  color: #000;
+}
+
+/* CONTADOR */
+
+#open-cart-mobile .cart-count{
+
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ff0033;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HOVER */
+
+#open-cart-mobile:hover{
+
+  transform: scale(1.07);
+}
+
+/* SOLO MOBILE */
+
+@media (min-width:1200px){
+
+  .mobile-icons{
+    display: none;
+  }
+
+}
+/* =========================
+   CARRITO DESKTOP
+========================= */
+
+.cart-icon{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#open-cart-desktop{
+
+    background: transparent;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 24px;
+    color: #000;
+
+    position: relative;
+}
+
+/* =========================
+   MOBILE ICONS
+========================= */
+
+.mobile-icons{
+
+    display: none;
+    align-items: center;
+    gap: 14px;
+}
+
+/* BOTON MOBILE */
+
+#open-cart-mobile{
+
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+#open-cart-mobile i{
+    font-size: 22px;
+    color: #000;
+}
+
+/* CONTADOR */
+
+.cart-count{
+
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #ff0033;
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MOBILE */
+
+@media (max-width:1199px){
+
+    .mobile-icons{
+        display: flex;
+        align-items: center;
+    }
+
+    .cart-icon{
+        display: none;
+    }
+}
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -2246,177 +2495,6 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
-
-/* From Uiverse.io by Smit-Prajapati - MODIFICADO 
-
-.contact .card {
-  position: auto;
-  width: 500px;
-  height: 500px;
-  margin-left: 100px;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 50px;
-  overflow: hidden;
-  box-shadow: rgba(255, 255, 255, 0) 0px 7px 29px 0px;
-  transition: all 0.6s ease-in-out;
-}
-
-.contact .background {
-  position: absolute;
-  inset: 0;
-  background: rgb(255, 255, 255);
-}
-
-/* 🔁 LOGO (AHORA ES IMG) 
-.contact .logo {
-  position: absolute;
-  right: 50%;
-  bottom: 50%;
-  transform: translate(50%, 50%);
-  transition: all 0.6s ease-in-out;
-}
-
-.logo img {
-  width: 70px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* ❌ ELIMINADO logo-svg (ya no se usa) */
-
-/* ICONOS 
-.icon {
-  display: inline-block;
-  width: 35px;
-  height: 22px;
-}
-
-.icon .svg {
-  fill: rgba(255, 255, 255, 0);
-  width: 100%;
-  transition: all 0.4s ease-in-out;
-}
-
-/* CAJAS 
-.box {
-  position: absolute;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.35);
-  border-top: 2px solid white;
-  border-right: 1px solid white;
-  border-radius: 10% 13% 42% 0%/10% 12% 75% 0%;
-  box-shadow: rgba(100, 100, 111, 0.25) -7px 7px 20px 0px;
-  transform-origin: bottom left;
-  transition: all 0.8s ease-in-out;
-}
-
-.box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-}
-
-.box:hover .svg {
-  fill: rgb(255, 255, 255);
-}
-
-/* 📸 INSTAGRAM 
-.box1 {
-  width: 80%;
-  height: 70%;
-  bottom: -70%;
-  left: -70%;
-}
-
-.box1::before {
-  background: radial-gradient(circle at 30% 107%, 
-    #fdf497 0%, 
-    #fdf497 5%, 
-    #fd5949 45%, 
-    #d6249f 60%, 
-    #285AEB 90%);
-}
-
-.box1:hover::before {
-  opacity: 1;
-}
-
-/* 💬 WHATSAPP
-.box2 {
-  width: 50%;
-  height: 50%;
-  bottom: -50%;
-  left: -50%;
-  transition-delay: 0.2s;
-}
-
-.box2::before {
-  background: radial-gradient(circle, #25D366 0%, #00ff5e 90%);
-}
-
-.box2:hover::before {
-  opacity: 1;
-}
-
-/* 🎵 TIKTOK
-.box3 {
-  width: 30%;
-  height: 30%;
-  bottom: -30%;
-  left: -30%;
-  transition-delay: 0.4s;
-}
-
-.box3::before {
-  background: radial-gradient(circle at 30% 107%, 
-    #000000 0%, 
-    #000000 0%,
-    #000000 0%,
-    #ff0040 60%, 
-    #00f2ff 90%);
-}
-
-.box3:hover::before {
-  opacity: 1;
-}
-
-/* (opcional)
-.box4 {
-  width: 10%;
-  height: 10%;
-  bottom: -10%;
-  left: -10%;
-  transition-delay: 0.6s;
-}
-
-/* ✨ EFECTOS 
-.card:hover {
-  transform: scale(1.08);
-}
-
-.card:hover .box {
-  bottom: -1px;
-  left: -1px;
-}
-
-.card:hover .logo {
-  transform: translate(0, 0);
-  bottom: 15px;
-  right: 15px;
-}
-
-/* 🔥 EFECTO HOVER ICONOS 
-.box:hover .icon .svg {
-  filter: drop-shadow(0 0 6px white);
-  transform: scale(1.1);
-}
-  /* ==================================================
-   FULLSCREEN IPHONE FIX
-================================================== */
-
 html,
 body{
   margin: 0;
@@ -2503,6 +2581,9 @@ body{
   }
 
 }
+
+
+
  
 /* =========================
    CALL TO ACTION MOBILE
