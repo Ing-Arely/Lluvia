@@ -128,8 +128,8 @@ document.querySelectorAll('.slider .list .item').forEach(item => {
 ========================= */
 
 let carrito = []
-
-const openCartBtn = document.getElementById('open-cart')
+const openCartDesktop = document.getElementById('open-cart-desktop')
+const openCartMobile = document.getElementById('open-cart-mobile')
 const cartModal = document.getElementById('cart-modal')
 const cartItems = document.getElementById('cart-items')
 const checkoutBtn = document.getElementById('checkout-btn')
@@ -138,20 +138,27 @@ const deliveryNote = document.getElementById('delivery-note')
 const closeCartBtn = document.querySelector('.close-cart')
 const whatsappText = document.querySelector('.whatsapp-text')
 const cartTotal = document.getElementById('cart-total')
-const cartCount = document.querySelector('.cart-count')
+const cartCounts = document.querySelectorAll('.cart-count')
 
 function actualizarBurbuja(){
 
-    cartCount.innerText = carrito.length
+    cartCounts.forEach(count => {
+        count.innerText = carrito.length
+    })
+
 }
 /* =========================
    ABRIR / CERRAR CARRITO
 ========================= */
 
-openCartBtn.addEventListener('click', () => {
+function abrirCarrito(){
+
     cartModal.classList.add('active')
     actualizarCarrito()
-})
+}
+
+openCartDesktop.addEventListener('click', abrirCarrito)
+openCartMobile.addEventListener('click', abrirCarrito)
 
 closeCartBtn.addEventListener('click', () => {
     cartModal.classList.remove('active')
