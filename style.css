@@ -965,62 +965,28 @@ a{
 
   color: rgb(4, 4, 38);
 }
-.cart-total{
-    font-size: 18px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    margin-bottom: 15px;
-    text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.6) 0px 3px 10px;
+
+@media (max-width: 768px){
+
+  .btn{
+
+    font-size: 0.8rem;
+
+    padding: 0.8rem 1.2rem;
+
+    width: auto;
+
+    border-radius: 12px;
+
+    margin-top: 8px;
+
+    box-shadow: 0px 0px 25px #1f4c65;
+
+    -webkit-box-reflect: none;
+  }
+
 }
 
-.cart-icon{
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-#open-cart{
-    position: relative;
-
-    background: transparent;
-    border: none;
-    margin-bottom: -60px;
-    margin-left: 35px;
-    margin-right: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    font-size: 24px;
-    color: #000000;
-
-    padding: 0;
-}
-
-.cart-count{
-    position: absolute;
-
-    top: -8px;
-    right: -10px;
-
-    width: 20px;
-    height: 20px;
-
-    border-radius: 50%;
-
-    background: #ff0022;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 11px;
-    font-weight: 700;
-}
 /* =========================
    SCROLL DENTRO DEL CARRITO
 ========================= */
@@ -1057,38 +1023,4 @@ a{
 
 #cart-items::-webkit-scrollbar-track{
     background: transparent;
-}
-/* =========================
-   CANASTA MOBILE
-========================= */
-
-@media (max-width: 768px){
-
-    .cart-icon{
-        position: absolute;
-
-        right: 60px;
-        top: 50%;
-
-        transform: translateY(-50%);
-
-        z-index: 9999;
-    }
-
-    #open-cart{
-        margin: 0;
-
-        font-size: 22px;
-    }
-
-    .cart-count{
-        width: 18px;
-        height: 18px;
-
-        font-size: 10px;
-
-        top: -6px;
-        right: -8px;
-    }
-
 }
