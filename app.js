@@ -212,8 +212,13 @@ function actualizarCarrito(){
         cartItems.innerHTML = `
             <div class="empty-cart">
                 Tu canasta está vacía
+                <img 
+      src="assets/img/canastapan.png"
+class="img-lluvia"class="hidden"
+      alt=""> 
             </div>
         `
+
 
         deliveryDate.classList.add('hidden')
         checkoutBtn.classList.add('hidden')
