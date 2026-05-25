@@ -488,15 +488,19 @@ h6 {
   }
 
 }
+.mobile-nav-active #open-cart-mobile {
+    transform: translateX(-40px);
+    transition: 0.3s;
+}
 /* =================================
    MOBILE ICONS
 ================================= */
 
-.mobile-icons{
 
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.mobile-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
   position: fixed;
 
@@ -574,7 +578,17 @@ h6 {
 
   transform: scale(1.07);
 }
+/* ICONO PERSONALIZADO */
 
+#open-cart-mobile img,
+#open-cart-desktop img{
+
+    width: 100px;
+    height: 100px;
+    margin-bottom: -30px ;
+    padding-bottom: 20px;
+    object-fit: contain;
+}
 /* SOLO MOBILE */
 
 @media (min-width:1200px){
@@ -584,6 +598,7 @@ h6 {
   }
 
 }
+
 /* =========================
    CARRITO DESKTOP
 ========================= */
@@ -623,53 +638,48 @@ h6 {
 }
 
 /* BOTON MOBILE */
-
-#open-cart-mobile{
-
+/* BOTÓN DEL CARRITO */
+#open-cart-mobile,
+#open-cart-desktop{
     position: relative;
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.15);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    
+    width: 48px;
+    height: 48px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
-#open-cart-mobile i{
-    font-size: 22px;
-    color: #000;
+/* ICONO PERSONALIZADO */
+#open-cart-mobile img,
+#open-cart-desktop img{
+    width: 100px;
+    height: 100px;
+    padding-left: 25px;
+    object-fit: contain;
 }
 
-/* CONTADOR */
-
+/* BURBUJA */
 .cart-count{
-
     position: absolute;
 
-    top: -5px;
-    right: -5px;
+    top: -4px;
+    right: -4px;
 
-    width: 18px;
+    min-width: 18px;
     height: 18px;
+
+    padding: 0 4px;
 
     border-radius: 50%;
 
-    background: #ff0033;
-    color: white;
-
     font-size: 11px;
-    font-weight: 700;
+    font-weight: bold;
 
     display: flex;
     align-items: center;
@@ -2497,9 +2507,10 @@ section,
 
 html,
 body{
-  margin: 0;
-  padding: 0;
-
+      background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   width: 100%;
   min-height: 100dvh;
 
