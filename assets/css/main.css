@@ -495,19 +495,19 @@ h6 {
 /* =================================
    MOBILE ICONS
 ================================= */
-
-
 .mobile-icons {
+
     display: flex;
     align-items: center;
-    gap: 12px;
 
-  position: fixed;
+    gap: 22px; /* MAS ESPACIO ENTRE CARRITO Y HAMBURGUESA */
 
-  top: 18px;
-  right: 15px;
+    position: fixed;
 
-  z-index: 99999;
+    top: 15px; /* SUBE TODO EL BLOQUE */
+    right: 20px; /* LO MUEVE MAS AL CENTRO */
+
+    z-index: 99999;
 }
 
 /* BOTON CARRITO MOBILE */
@@ -518,17 +518,17 @@ h6 {
 
   width: 42px;
   height: 42px;
-
+   right: 30px;
   border: none;
   outline: none;
 
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0);
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
+ transform: translateY(-4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -553,17 +553,14 @@ h6 {
   position: absolute;
 
   top: -5px;
-  right: -5px;
+  right: -5 px;
 
   width: 18px;
   height: 18px;
 
   border-radius: 50%;
-
-  background: #ff0033;
-
-  color: white;
-
+background: #00b4d8;
+color: #1d3557;
   font-size: 11px;
   font-weight: 700;
 
@@ -673,7 +670,8 @@ h6 {
 
     min-width: 18px;
     height: 18px;
-
+    background: #00b4d8;
+color: #1d3557;
     padding: 0 4px;
 
     border-radius: 50%;
