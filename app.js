@@ -79,6 +79,11 @@ const productos = {
         { piezas: 10, precio: 120 },
         { piezas: 20, precio: 235 },
         { piezas: 30, precio: 345 }
+    ],
+    polvorones: [
+        { piezas: 4, precio: 50 },
+        { piezas: 6, precio: 70 },
+        { piezas: 12, precio: 140 }
     ]
 }
 
@@ -188,6 +193,7 @@ document.querySelectorAll('.add-cart').forEach(button => {
         if(tipo === "canela") imagen = "assets/img/canela.png"
         if(tipo === "chispas") imagen = "assets/img/chisp.png"
         if(tipo === "miel") imagen = "assets/img/sol1.png"
+        if(tipo === "polvorones") imagen = "assets/img/polvoron.png"
 
         carrito.push({
             nombre,
