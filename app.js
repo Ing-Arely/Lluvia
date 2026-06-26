@@ -49,41 +49,40 @@ function moveSlider(direction){
 const productos = {
     marmoleado: [
         { piezas: 2, precio: 45 },
-        { piezas: 4, precio: 75 },
-        { piezas: 10, precio: 89 }
+        { piezas: 4, precio: 80 },
+        { piezas: 6, precio: 110 }
     ],
     brownie: [
-        { piezas: 2, precio: 40 },
-        { piezas: 4, precio: 60 },
-        { piezas: 6, precio: 80 },
-        { piezas: 8, precio: 99 }
+        { piezas: 4, precio: 70 },
+        { piezas: 8, precio: 130 }
     ],
     conchas: [
-        { piezas: 2, precio: 20 },
-        { piezas: 6, precio: 50 },
-        { piezas: 12, precio: 80 }
+        { piezas: 2, precio: 25 },
+        { piezas: 6, precio: 65 },
+        { piezas: 12, precio: 120 }
     ],
-    canela: [
+    /* canela: [
         { piezas: 4, precio: 40 },
         { piezas: 8, precio: 65 },
         { piezas: 12, precio: 89 }
-    ],
+    ],*/
     chispas: [
-        { piezas: 5, precio: 30 },
-        { piezas: 10, precio: 50 },
-        { piezas: 15, precio:70 }
+       { piezas: 5, precio: 40 },
+        { piezas: 10, precio: 70 },
+        { piezas: 15, precio: 110 }
     ],
     miel: [
-        { piezas: 5, precio: 30 },
-        { piezas: 10, precio: 50 },
-        { piezas: 15, precio:70 }
+       { piezas: 5, precio: 40 },
+        { piezas: 10, precio: 70 },
+        { piezas: 15, precio: 110 }
     ],
     polvorones: [
-        { piezas: 4, precio: 30 },
-        { piezas: 6, precio: 40 },
-        { piezas: 12, precio: 70 }
+        { piezas: 4, precio: 35 },
+        { piezas: 6, precio: 50 },
+        { piezas: 12, precio: 85 }
     ]
 }
+
 
 /* =========================
    CANTIDADES Y PRECIOS
