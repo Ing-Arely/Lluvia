@@ -48,7 +48,7 @@ function moveSlider(direction){
 
 const productos = {
     marmoleado: [
-        { piezas: 2, precio: 45 },
+      
         { piezas: 4, precio: 80 },
         { piezas: 6, precio: 110 }
     ],
@@ -56,7 +56,7 @@ const productos = {
         { piezas: 4, precio: 70 },
         { piezas: 8, precio: 130 }
     ],
-    conchas: [
+    /*  conchas: [
         { piezas: 2, precio: 25 },
         { piezas: 6, precio: 65 },
         { piezas: 12, precio: 120 }
@@ -76,11 +76,11 @@ const productos = {
         { piezas: 10, precio: 70 },
         { piezas: 15, precio: 110 }
     ],
-    polvorones: [
+    /*  polvorones: [
         { piezas: 4, precio: 35 },
         { piezas: 6, precio: 50 },
         { piezas: 12, precio: 85 }
-    ]
+    ]*/
 }
 
 
@@ -167,7 +167,7 @@ closeCartBtn.addEventListener('click', () => {
 
 
 /* =========================
-   AGREGAR PRODUCTOS
+AGREGAR PRODUCTOS
 ========================= */
 
 document.querySelectorAll('.add-cart').forEach(button => {
@@ -182,14 +182,10 @@ document.querySelectorAll('.add-cart').forEach(button => {
         const precio = item.querySelector('.price').innerText
 
         let imagen = ""
-
         if(tipo === "marmoleado") imagen = "assets/img/PanqueeM.png"
         if(tipo === "brownie") imagen = "assets/img/Brownie (2).png"
-        if(tipo === "conchas") imagen = "assets/img/conchaas.png"
-        if(tipo === "canela") imagen = "assets/img/canela.png"
         if(tipo === "chispas") imagen = "assets/img/chisp.png"
         if(tipo === "miel") imagen = "assets/img/sol1.png"
-        if(tipo === "polvorones") imagen = "assets/img/polvoron.png"
 
         carrito.push({
             nombre,
@@ -314,7 +310,7 @@ checkoutBtn.addEventListener('click', () => {
 
     mensaje += `• Fecha de entrega: ${deliveryDate.value}`
 
-    const numero = "5214427127083"
+    const numero = "525562267011"
 
     const url = `https://wa.me/${numero}?text=${mensaje}`
 
