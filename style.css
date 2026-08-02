@@ -1024,3 +1024,342 @@ a{
 #cart-items::-webkit-scrollbar-track{
     background: transparent;
 }
+/* ==================================================
+   REDES SOCIALES EN LA GOTITA DE CONTACTO
+================================================== */
+
+.contact-social-card {
+    position: relative;
+
+    width: 270px;
+    height: 270px;
+
+    flex-shrink: 0;
+    overflow: visible;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    isolation: isolate;
+    z-index: 10;
+}
+
+/* GOTITA CAFÉ */
+
+.contact-drop-logo {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+
+    width: 180px;
+    height: 180px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 5;
+
+    transition:
+        width 0.65s ease,
+        height 0.65s ease,
+        transform 0.65s ease,
+        right 0.65s ease,
+        bottom 0.65s ease;
+}
+
+.contact-drop-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 12px 18px rgba(75, 40, 20, 0.2)
+    );
+
+    transition:
+        transform 0.65s ease,
+        filter 0.65s ease;
+}
+.thumb-tartita{
+
+    width:75%;
+
+    height:auto;
+
+    object-fit:contain;
+
+    transform:scale(.75);
+}
+/* CAJAS DE LAS REDES */
+
+.contact-social-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 22px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.95);
+    border-right: 2px solid rgba(255, 255, 255, 0.85);
+
+    text-decoration: none;
+
+    box-shadow:
+        -8px 10px 24px rgba(83, 52, 31, 0.2);
+
+    overflow: hidden;
+
+    transform-origin: bottom left;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translate(175px, 165px)
+        scale(0.12);
+
+    transition:
+        transform 0.75s cubic-bezier(.22, 1, .36, 1),
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        box-shadow 0.35s ease;
+
+    pointer-events: none;
+}
+
+/* Brillo ligero */
+
+.contact-social-box::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.35),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+/* INSTAGRAM */
+
+.contact-instagram{
+    width:250px;
+    height:235px;
+
+    border-radius:42px 50px 125px 50px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border:2px solid rgba(255,255,255,.8);
+}
+
+/* WHATSAPP */
+
+.contact-whatsapp{
+    width:160px;
+    height:155px;
+
+    border-radius:38px 48px 92px 42px;
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border:2px solid rgba(255,255,255,.8);
+}
+.contact-instagram:hover{
+    background:radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 8%,
+        #fd5949 45%,
+        #d6249f 65%,
+        #285AEB 100%
+    );
+
+    transform:scale(1.03);
+}
+.contact-whatsapp:hover{
+    background:linear-gradient(
+        145deg,
+        #25D366,
+        #00ff6a
+    );
+
+    transform:scale(1.03);
+}
+.contact-social-box{
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.16);
+}
+/* ICONOS */
+.contact-social-icon svg{
+    fill:white;
+
+    opacity:.95;
+
+    transition:.35s;
+}
+
+.contact-social-icon {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+}
+
+.contact-social-icon svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    fill: rgba(255, 255, 255, 0.95);
+
+    filter:
+        drop-shadow(0 3px 5px rgba(0, 0, 0, 0.18));
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+/* ABRIR AL PASAR EL CURSOR */
+
+.contact-social-card:hover .contact-social-box,
+.contact-social-card:focus-within .contact-social-box {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(0, 0)
+        scale(1);
+
+    pointer-events: auto;
+}
+
+/* GOTITA PEQUEÑA EN LA ESQUINA */
+
+.contact-social-card:hover .contact-drop-logo,
+.contact-social-card:focus-within .contact-drop-logo {
+    width: 105px;
+    height: 105px;
+
+    right: -2px;
+    bottom: -5px;
+
+    transform: rotate(3deg);
+}
+
+.contact-social-card:hover .contact-drop-logo img,
+.contact-social-card:focus-within .contact-drop-logo img {
+    filter:
+        drop-shadow(0 8px 12px rgba(75, 40, 20, 0.28));
+}
+
+/* HOVER INDIVIDUAL */
+
+.contact-social-box:hover {
+    box-shadow:
+        -10px 13px 28px rgba(60, 35, 20, 0.3);
+}
+
+.contact-social-box:hover .contact-social-icon svg {
+    transform: scale(1.14);
+    filter:
+        drop-shadow(0 0 7px rgba(255, 255, 255, 0.95));
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-social-card {
+        width: 220px;
+        height: 220px;
+
+        margin: 5px auto 15px;
+    }
+
+    .contact-drop-logo {
+        width: 145px;
+        height: 145px;
+
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .contact-instagram {
+        width: 205px;
+        height: 195px;
+
+        border-radius:
+            35px 42px 105px 42px;
+    }
+
+    .contact-whatsapp {
+        width: 135px;
+        height: 130px;
+
+        border-radius:
+            32px 38px 78px 35px;
+    }
+
+    .contact-social-box {
+        padding: 17px;
+    }
+
+    .contact-social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .contact-social-card:hover .contact-drop-logo,
+    .contact-social-card:focus-within .contact-drop-logo {
+        width: 82px;
+        height: 82px;
+
+        right: -2px;
+        bottom: -3px;
+    }
+}
+#contact {
+    overflow: visible;
+}
+
+#contact .info-wrap,
+#contact .contact-top {
+    overflow: visible;
+}
+
