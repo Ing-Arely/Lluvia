@@ -2,43 +2,84 @@
    SLIDER
 ========================= */
 
-let nextBtn = document.querySelector('.next')
-let prevBtn = document.querySelector('.prev')
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
-let slider = document.querySelector('.slider')
-let sliderList = slider.querySelector('.list')
-let thumbnail = document.querySelector('.thumbnail')
-let thumbnailItems = thumbnail.querySelectorAll('.item')
+const slider = document.querySelector(".slider");
+const sliderList = slider.querySelector(".list");
+const thumbnail = document.querySelector(".thumbnail");
 
-thumbnail.appendChild(thumbnailItems[0])
+const thumbnailItemsIniciales =
+    thumbnail.querySelectorAll(".item");
 
-nextBtn.onclick = function () {
-    moveSlider('next')
+/*
+La primera miniatura se manda al final para que
+coincida con el funcionamiento visual del slider.
+*/
+if (thumbnailItemsIniciales.length > 0) {
+    thumbnail.appendChild(
+        thumbnailItemsIniciales[0]
+    );
 }
 
-prevBtn.onclick = function () {
-    moveSlider('prev')
-}
+nextBtn.addEventListener("click", () => {
+    moveSlider("next");
+});
 
-function moveSlider(direction){
+prevBtn.addEventListener("click", () => {
+    moveSlider("prev");
+});
 
-    let sliderItems = sliderList.querySelectorAll('.item')
-    let thumbnailItems = thumbnail.querySelectorAll('.item')
+function moveSlider(direction) {
 
-    if(direction === 'next'){
-        sliderList.appendChild(sliderItems[0])
-        thumbnail.appendChild(thumbnailItems[0])
-        slider.classList.add('next')
-    } else {
-        sliderList.prepend(sliderItems[sliderItems.length - 1])
-        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
-        slider.classList.add('prev')
+    const sliderItems =
+        sliderList.querySelectorAll(".item");
+
+    const thumbnailItems =
+        thumbnail.querySelectorAll(".item");
+
+    if (
+        sliderItems.length === 0 ||
+        thumbnailItems.length === 0
+    ) {
+        return;
     }
 
-    slider.addEventListener('animationend', function(){
-        slider.classList.remove('next')
-        slider.classList.remove('prev')
-    }, { once: true })
+    if (direction === "next") {
+
+        sliderList.appendChild(
+            sliderItems[0]
+        );
+
+        thumbnail.appendChild(
+            thumbnailItems[0]
+        );
+
+        slider.classList.add("next");
+
+    } else {
+
+        sliderList.prepend(
+            sliderItems[sliderItems.length - 1]
+        );
+
+        thumbnail.prepend(
+            thumbnailItems[
+                thumbnailItems.length - 1
+            ]
+        );
+
+        slider.classList.add("prev");
+    }
+
+    slider.addEventListener(
+        "animationend",
+        () => {
+            slider.classList.remove("next");
+            slider.classList.remove("prev");
+        },
+        { once: true }
+    );
 }
 
 
@@ -47,279 +88,650 @@ function moveSlider(direction){
 ========================= */
 
 const productos = {
+
     marmoleado: [
-      
-        { piezas: 4, precio: 80 },
-        { piezas: 6, precio: 110 }
+        {
+            piezas: 4,
+            precio: 80
+        }
     ],
+
     brownie: [
-        { piezas: 4, precio: 70 },
-        { piezas: 8, precio: 130 }
+        {
+            piezas: 4,
+            precio: 75
+        }
     ],
-    /*  conchas: [
-        { piezas: 2, precio: 25 },
-        { piezas: 6, precio: 65 },
-        { piezas: 12, precio: 120 }
+
+    tartasuva: [
+        {
+            piezas: 4,
+            precio: 180
+        }
     ],
-    /* canela: [
-        { piezas: 4, precio: 40 },
-        { piezas: 8, precio: 65 },
-        { piezas: 12, precio: 89 }
-    ],*/
+
+    /*
+    conchas: [
+        {
+            piezas: 2,
+            precio: 25
+        },
+        {
+            piezas: 6,
+            precio: 65
+        },
+        {
+            piezas: 12,
+            precio: 120
+        }
+    ],
+    */
+
+    /*
+    canela: [
+        {
+            piezas: 4,
+            precio: 40
+        },
+        {
+            piezas: 8,
+            precio: 65
+        },
+        {
+            piezas: 12,
+            precio: 89
+        }
+    ],
+    */
+
     chispas: [
-       { piezas: 5, precio: 40 },
-        { piezas: 10, precio: 70 },
-        { piezas: 15, precio: 110 }
+        {
+            piezas: 5,
+            precio: 40
+        }
     ],
+
     miel: [
-       { piezas: 5, precio: 40 },
-        { piezas: 10, precio: 70 },
-        { piezas: 15, precio: 110 }
-    ],
-    /*  polvorones: [
-        { piezas: 4, precio: 35 },
-        { piezas: 6, precio: 50 },
-        { piezas: 12, precio: 85 }
-    ]*/
-}
+        {
+            piezas: 5,
+            precio: 40
+        }
+    ]
+
+    /*
+    polvorones: [
+        {
+            piezas: 4,
+            precio: 35
+        },
+        {
+            piezas: 6,
+            precio: 50
+        },
+        {
+            piezas: 12,
+            precio: 85
+        }
+    ]
+    */
+
+};
+
+
+/* =========================
+   IMÁGENES DEL CARRITO
+========================= */
+
+const imagenesProductos = {
+
+    marmoleado:
+        "assets/img/PanqueeM.png",
+
+    brownie:
+        "assets/img/Brownie (2).png",
+
+    tartasuva:
+        "assets/img/tartita1.png",
+
+    chispas:
+        "assets/img/chisp.png",
+
+    miel:
+        "assets/img/sol1.png"
+
+    /*
+    conchas:
+        "assets/img/conchas.png",
+
+    canela:
+        "assets/img/roles.png",
+
+    polvorones:
+        "assets/img/polvorones.png"
+    */
+
+};
 
 
 /* =========================
    CANTIDADES Y PRECIOS
 ========================= */
 
-document.querySelectorAll('.slider .list .item').forEach(item => {
+document
+    .querySelectorAll(".slider .list .item")
+    .forEach(item => {
 
-    let tipo = item.dataset.producto
-    if(!tipo || !productos[tipo]) return
+        const tipo =
+            item.dataset.producto;
 
-    let plus = item.querySelector('.plus')
-    let minus = item.querySelector('.minus')
-    let quantityText = item.querySelector('.quantity')
-    let priceText = item.querySelector('.price')
-
-    let paquetes = productos[tipo]
-    let index = 0
-
-    function actualizar(){
-        quantityText.innerText = `${paquetes[index].piezas} pz`
-        priceText.innerText = `$${paquetes[index].precio} MXN`
-    }
-
-    actualizar()
-
-    plus.addEventListener('click', () => {
-        if(index < paquetes.length - 1){
-            index++
-            actualizar()
+        /*
+        Si el elemento no tiene data-producto
+        o no existe en el objeto productos,
+        no continúa.
+        */
+        if (
+            !tipo ||
+            !productos[tipo]
+        ) {
+            return;
         }
-    })
 
-    minus.addEventListener('click', () => {
-        if(index > 0){
-            index--
-            actualizar()
+        const plus =
+            item.querySelector(".plus");
+
+        const minus =
+            item.querySelector(".minus");
+
+        const quantityText =
+            item.querySelector(".quantity");
+
+        const priceText =
+            item.querySelector(".price");
+
+        /*
+        Evita errores si algún producto todavía
+        no tiene selector, cantidad o precio.
+        */
+        if (
+            !plus ||
+            !minus ||
+            !quantityText ||
+            !priceText
+        ) {
+            return;
         }
-    })
-})
+
+        const paquetes =
+            productos[tipo];
+
+        let index = 0;
+
+        function actualizar() {
+
+            quantityText.innerText =
+                `${paquetes[index].piezas} pz`;
+
+            priceText.innerText =
+                `$${paquetes[index].precio} MXN`;
+        }
+
+        actualizar();
+
+        plus.addEventListener(
+            "click",
+            event => {
+
+                /*
+                Evita que el clic interfiera
+                con otros eventos del slider.
+                */
+                event.stopPropagation();
+
+                if (
+                    index <
+                    paquetes.length - 1
+                ) {
+                    index++;
+                    actualizar();
+                }
+            }
+        );
+
+        minus.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
+
+                if (index > 0) {
+                    index--;
+                    actualizar();
+                }
+            }
+        );
+    });
 
 
 /* =========================
    CARRITO
 ========================= */
 
-let carrito = []
-const openCartDesktop = document.getElementById('open-cart-desktop')
-const openCartMobile = document.getElementById('open-cart-mobile')
-const cartModal = document.getElementById('cart-modal')
-const cartItems = document.getElementById('cart-items')
-const checkoutBtn = document.getElementById('checkout-btn')
-const deliveryDate = document.getElementById('delivery-date')
-const deliveryNote = document.getElementById('delivery-note')
-const closeCartBtn = document.querySelector('.close-cart')
-const whatsappText = document.querySelector('.whatsapp-text')
-const cartTotal = document.getElementById('cart-total')
-const cartCounts = document.querySelectorAll('.cart-count')
+let carrito = [];
 
-function actualizarBurbuja(){
+const openCartDesktop =
+    document.getElementById(
+        "open-cart-desktop"
+    );
+
+const openCartMobile =
+    document.getElementById(
+        "open-cart-mobile"
+    );
+
+const cartModal =
+    document.getElementById(
+        "cart-modal"
+    );
+
+const cartItems =
+    document.getElementById(
+        "cart-items"
+    );
+
+const checkoutBtn =
+    document.getElementById(
+        "checkout-btn"
+    );
+
+const deliveryDate =
+    document.getElementById(
+        "delivery-date"
+    );
+
+const deliveryNote =
+    document.getElementById(
+        "delivery-note"
+    );
+
+const closeCartBtn =
+    document.querySelector(
+        ".close-cart"
+    );
+
+const whatsappText =
+    document.querySelector(
+        ".whatsapp-text"
+    );
+
+const cartTotal =
+    document.getElementById(
+        "cart-total"
+    );
+
+const cartCounts =
+    document.querySelectorAll(
+        ".cart-count"
+    );
+
+
+/* =========================
+   BURBUJA DEL CARRITO
+========================= */
+
+function actualizarBurbuja() {
 
     cartCounts.forEach(count => {
-        count.innerText = carrito.length
-    })
-
+        count.innerText =
+            carrito.length;
+    });
 }
+
+
 /* =========================
    ABRIR / CERRAR CARRITO
 ========================= */
 
-function abrirCarrito(){
+function abrirCarrito() {
 
-    cartModal.classList.add('active')
-    actualizarCarrito()
+    cartModal.classList.add(
+        "active"
+    );
+
+    actualizarCarrito();
 }
 
-openCartDesktop.addEventListener('click', abrirCarrito)
-openCartMobile.addEventListener('click', abrirCarrito)
+openCartDesktop.addEventListener(
+    "click",
+    abrirCarrito
+);
 
-closeCartBtn.addEventListener('click', () => {
-    cartModal.classList.remove('active')
-})
+openCartMobile.addEventListener(
+    "click",
+    abrirCarrito
+);
+
+closeCartBtn.addEventListener(
+    "click",
+    () => {
+
+        cartModal.classList.remove(
+            "active"
+        );
+    }
+);
+
+/*
+Cerrar el carrito al hacer clic fuera
+de la caja del carrito.
+*/
+cartModal.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === cartModal) {
+
+            cartModal.classList.remove(
+                "active"
+            );
+        }
+    }
+);
 
 
 /* =========================
-AGREGAR PRODUCTOS
+   AGREGAR PRODUCTOS
 ========================= */
 
-document.querySelectorAll('.add-cart').forEach(button => {
+document
+    .querySelectorAll(".add-cart")
+    .forEach(button => {
 
-    button.addEventListener('click', () => {
+        button.addEventListener(
+            "click",
+            event => {
 
-        const item = button.closest('.item')
+                event.stopPropagation();
 
-        const tipo = item.dataset.producto
-        const nombre = item.querySelector('.title').innerText
-        const cantidad = item.querySelector('.quantity').innerText
-        const precio = item.querySelector('.price').innerText
+                const item =
+                    button.closest(".item");
 
-        let imagen = ""
-        if(tipo === "marmoleado") imagen = "assets/img/PanqueeM.png"
-        if(tipo === "brownie") imagen = "assets/img/Brownie (2).png"
-        if(tipo === "chispas") imagen = "assets/img/chisp.png"
-        if(tipo === "miel") imagen = "assets/img/sol1.png"
+                if (!item) {
+                    return;
+                }
 
-        carrito.push({
-            nombre,
-            cantidad,
-            precio,
-            imagen
-        })
-        actualizarBurbuja()
-        actualizarCarrito()
-    })
-})
+                const tipo =
+                    item.dataset.producto;
+
+                const titleElement =
+                    item.querySelector(
+                        ".title"
+                    );
+
+                const quantityElement =
+                    item.querySelector(
+                        ".quantity"
+                    );
+
+                const priceElement =
+                    item.querySelector(
+                        ".price"
+                    );
+
+                if (
+                    !tipo ||
+                    !titleElement ||
+                    !quantityElement ||
+                    !priceElement
+                ) {
+                    return;
+                }
+
+                const nombre =
+                    titleElement.innerText;
+
+                const cantidad =
+                    quantityElement.innerText;
+
+                const precio =
+                    priceElement.innerText;
+
+                const imagen =
+                    imagenesProductos[tipo] ||
+                    "";
+
+                carrito.push({
+                    tipo,
+                    nombre,
+                    cantidad,
+                    precio,
+                    imagen
+                });
+
+                actualizarBurbuja();
+                actualizarCarrito();
+            }
+        );
+    });
 
 
 /* =========================
    MOSTRAR CARRITO
 ========================= */
 
-function actualizarCarrito(){
+function actualizarCarrito() {
 
-    if(carrito.length === 0){
+    if (carrito.length === 0) {
 
         cartItems.innerHTML = `
             <div class="empty-cart">
-                Tu canasta está vacía
-                <img 
-      src="assets/img/canastapan.png"
-class="img-lluvia"class="hidden"
-      alt=""> 
+
+                <p>
+                    Tu canasta está vacía
+                </p>
+
+                <img
+                    src="assets/img/canastapan.png"
+                    class="img-lluvia"
+                    alt="Canasta vacía"
+                >
+
             </div>
-        `
+        `;
 
+        deliveryDate.classList.add(
+            "hidden"
+        );
 
-        deliveryDate.classList.add('hidden')
-        checkoutBtn.classList.add('hidden')
-        deliveryNote.classList.add('hidden')
-        whatsappText.classList.add('hidden')
-        cartTotal.classList.add('hidden')
+        checkoutBtn.classList.add(
+            "hidden"
+        );
 
-        return
+        deliveryNote.classList.add(
+            "hidden"
+        );
+
+        whatsappText.classList.add(
+            "hidden"
+        );
+
+        cartTotal.classList.add(
+            "hidden"
+        );
+
+        return;
     }
 
-    deliveryDate.classList.remove('hidden')
-    checkoutBtn.classList.remove('hidden')
-    deliveryNote.classList.remove('hidden')
-    whatsappText.classList.remove('hidden')
-    cartTotal.classList.remove('hidden')
+    deliveryDate.classList.remove(
+        "hidden"
+    );
 
-    cartItems.innerHTML = ""
+    checkoutBtn.classList.remove(
+        "hidden"
+    );
 
-    let total = 0
+    deliveryNote.classList.remove(
+        "hidden"
+    );
 
-    carrito.forEach((producto, index) => {
+    whatsappText.classList.remove(
+        "hidden"
+    );
 
-        let precioNumero = parseFloat(
-            producto.precio.replace(/[^0-9.]/g, "")
-        )
+    cartTotal.classList.remove(
+        "hidden"
+    );
 
-        total += precioNumero
+    cartItems.innerHTML = "";
 
-        cartItems.innerHTML += `
-            <div class="cart-item">
+    let total = 0;
 
-                <img src="${producto.imagen}" class="cart-img">
+    carrito.forEach(
+        (producto, index) => {
 
-                <div class="cart-info">
+            const precioNumero =
+                parseFloat(
+                    producto.precio.replace(
+                        /[^0-9.]/g,
+                        ""
+                    )
+                ) || 0;
 
-                    <p class="cart-qty">
-                        ${producto.cantidad}
-                    </p>
+            total += precioNumero;
 
-                    <p class="cart-price">
-                        ${producto.precio}
-                    </p>
+            cartItems.innerHTML += `
+                <div class="cart-item">
+
+                    <img
+                        src="${producto.imagen}"
+                        class="cart-img"
+                        alt="${producto.nombre}"
+                    >
+
+                    <div class="cart-info">
+
+                        <p class="cart-qty">
+                            ${producto.nombre}
+                        </p>
+
+                        <p class="cart-qty">
+                            ${producto.cantidad}
+                        </p>
+
+                        <p class="cart-price">
+                            ${producto.precio}
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        onclick="eliminarProducto(${index})"
+                        aria-label="Eliminar ${producto.nombre}"
+                    >
+                        X
+                    </button>
 
                 </div>
+            `;
+        }
+    );
 
-                <button onclick="eliminarProducto(${index})">
-                    X
-                </button>
-
-            </div>
-        `
-    })
-
-cartTotal.innerText = `Total: $${total} MXN`
+    cartTotal.innerText =
+        `Total: $${total} MXN`;
 }
+
 
 /* =========================
-   ELIMINAR
+   ELIMINAR PRODUCTO
 ========================= */
 
-function eliminarProducto(index){
+function eliminarProducto(index) {
 
-    carrito.splice(index, 1)
+    if (
+        index < 0 ||
+        index >= carrito.length
+    ) {
+        return;
+    }
 
-    actualizarBurbuja()
-    actualizarCarrito()
+    carrito.splice(index, 1);
+
+    actualizarBurbuja();
+    actualizarCarrito();
 }
+
+
+/*
+Se coloca en window porque el botón para
+eliminar utiliza onclick dentro del HTML
+generado dinámicamente.
+*/
+window.eliminarProducto =
+    eliminarProducto;
 
 
 /* =========================
    WHATSAPP
 ========================= */
 
-checkoutBtn.addEventListener('click', () => {
+checkoutBtn.addEventListener(
+    "click",
+    () => {
 
-    if(carrito.length === 0){
-        alert("Agrega productos al carrito")
-        return
+        if (carrito.length === 0) {
+
+            alert(
+                "Agrega productos al carrito"
+            );
+
+            return;
+        }
+
+        if (deliveryDate.value === "") {
+
+            alert(
+                "Selecciona una fecha"
+            );
+
+            return;
+        }
+
+        let mensaje =
+            "Hola, quiero hacer un pedido:\n\n";
+
+        carrito.forEach(producto => {
+
+            mensaje +=
+                `• ${producto.nombre}\n`;
+
+            mensaje +=
+                `${producto.cantidad}\n`;
+
+            mensaje +=
+                `${producto.precio}\n\n`;
+        });
+
+        mensaje +=
+            `• Fecha de entrega: ${deliveryDate.value}`;
+
+        const numero =
+            "525562267011";
+
+        const url =
+            `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+        window.open(
+            url,
+            "_blank",
+            "noopener,noreferrer"
+        );
     }
-
-    if(deliveryDate.value === ""){
-        alert("Selecciona una fecha")
-        return
-    }
-
-    let mensaje = `Hola, quiero hacer un pedido:%0A%0A`
-
-    carrito.forEach(producto => {
-        mensaje += `• ${producto.nombre}%0A${producto.cantidad}%0A${producto.precio}%0A%0A`
-    })
-
-    mensaje += `• Fecha de entrega: ${deliveryDate.value}`
-
-    const numero = "525562267011"
-
-    const url = `https://wa.me/${numero}?text=${mensaje}`
-
-    window.open(url, '_blank')
-})
+);
 
 
 /* =========================
    INICIALIZAR
 ========================= */
-actualizarBurbuja()
-actualizarCarrito()
+
+actualizarBurbuja();
+actualizarCarrito();
